@@ -69,7 +69,7 @@ const portfolioData = [
 // Fonction pour créer une carte de projet
 function createProjectCard(project) {
     return `
-        <div class="col-lg-6 col-md-6">
+        <div class="col-lg-6 col-md-6 col-sm-12 mb-4">
             <div class="project-card" data-category="${project.category}">
                 <div class="project-image-container">
                     <img src="${project.image}" alt="${project.alt}" class="project-image">

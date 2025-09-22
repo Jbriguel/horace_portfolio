@@ -1630,8 +1630,8 @@ a:hover {
   transition: all 0.3s ease;
 }
 
-.navbar {
-  padding: 0.75rem 0;
+.navbar, #header-nav {
+  padding: 0.75rem 0 !important;
   transition: all 0.3s ease;
   background-color: var(--white-color);
   border-bottom: 1px solid rgba(0, 0, 0, 0.05);
@@ -1639,8 +1639,21 @@ a:hover {
   top: 0;
   left: 0;
   right: 0;
-  z-index: 1000;
+  z-index: 1030;
   width: 100%;
+}
+
+/* Écraser la classe py-4 de Bootstrap */
+#header-nav.py-4 {
+  padding-top: 0.75rem !important;
+  padding-bottom: 0.75rem !important;
+}
+
+/* S'assurer que le container aligne logo et hamburger */
+#header-nav .container-fluid {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
 }
 
 .navbar.scrolled {
@@ -1663,9 +1676,11 @@ body {
   font-family: var(--heading-font);
   font-weight: 700;
   font-size: 1.5rem;
-  color: var(--dark-color) !important;
+  color: var(--dark-color);
+  text-decoration: none;
   display: flex;
   align-items: center;
+  gap: 0.5rem;
 }
 
 .navbar-brand span {
@@ -2377,16 +2392,23 @@ body {
 
 /* Navigation responsive */
 @media (max-width: 991.98px) {
-  .navbar {
-    padding: 0.5rem 0;
+  #header-nav {
+    padding: 0.5rem 0 !important;
   }
   
-  .navbar.scrolled {
-    padding: 0.3rem 0;
+  #header-nav .container-fluid {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+  }
+  
+  .navbar-brand {
+    /* Hérite des styles globaux */
   }
   
   .navbar-brand img {
     max-height: 50px;
+    flex-shrink: 0;
   }
   
   .navbar-nav {
@@ -2395,34 +2417,56 @@ body {
   
   .navbar-nav .nav-link {
     padding: 0.5rem 1rem;
-    font-size: 0.95rem;
+    font-size: 0.9rem;
   }
   
+  /* Réduire le padding du body sur tablette */
   body {
-    padding-top: 70px;
+    padding-top: 70px !important;
   }
 }
 
 @media (max-width: 767.98px) {
-  .navbar {
-    padding: 0.4rem 0;
+  #header-nav .container-fluid {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
   }
-  
-  .navbar.scrolled {
-    padding: 0.25rem 0;
+   
+
+  #header-nav .container-fluid {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    position: relative !important;
+    height: auto !important;
   }
   
   .navbar-brand {
     font-size: 1.3rem;
+    margin-left: 0 !important;
+    padding-left: 0 !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 0.4rem !important;
+    position: static !important;
+    left: auto !important;
+    transform: none !important;
+  }
+  
+  .navbar-toggler {
+    position: absolute !important;
+    right: 15px !important;
+    z-index: 1031 !important;
   }
   
   .navbar-brand img {
     max-height: 45px;
+    flex-shrink: 0;
   }
   
   .navbar-nav .nav-link {
     padding: 0.4rem 0.8rem;
-    font-size: 0.9rem;
+    font-size: 0.85rem;
   }
   
   .navbar-toggler {
@@ -2430,45 +2474,59 @@ body {
   }
   
   .navbar-toggler-icon {
-    width: 1.3em;
-    height: 1.3em;
+    width: 1.2em;
+    height: 1.2em;
   }
   
+  /* Réduire encore plus le padding du body sur mobile */
   body {
-    padding-top: 60px;
+    padding-top: 60px !important;
   }
 }
 
 @media (max-width: 575.98px) {
-  .navbar {
-    padding: 0.3rem 0;
+  #header-nav {
+    padding: 1rem 0 !important;
+    min-height: 75px !important;
   }
   
-  .navbar.scrolled {
-    padding: 0.2rem 0;
+  #header-nav .container-fluid {
+    display: flex !important;
+    align-items: center !important;
+    justify-content: space-between !important;
+    position: relative !important;
+    height: auto !important;
   }
   
   .navbar-brand {
     font-size: 1.2rem;
+    display: flex !important;
+    align-items: center !important;
+    gap: 0.3rem !important;
+    position: static !important;
+    left: auto !important;
+    transform: none !important;
+  }
+  
+  .navbar-toggler {
+    position: absolute !important;
+    right: 15px !important;
+    z-index: 1031 !important;
   }
   
   .navbar-brand img {
     max-height: 40px;
+    flex-shrink: 0;
   }
   
   .navbar-nav .nav-link {
     padding: 0.3rem 0.6rem;
-    font-size: 0.85rem;
-  }
-  
-  .navbar .btn-outline-primary {
-    padding: 0.4rem 1rem;
     font-size: 0.8rem;
-    margin-left: 0.5rem;
   }
   
+  /* Padding body minimal sur très petit écran */
   body {
-    padding-top: 55px;
+    padding-top: 55px !important;
   }
 }
 
