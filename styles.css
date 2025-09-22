@@ -2176,6 +2176,351 @@ body {
   }
 }
 
+/* Large screens (Desktop) */
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1140px;
+  }
+  
+  .hero-title {
+    font-size: 4rem;
+  }
+  
+  .section-title h1 {
+    font-size: 3rem;
+  }
+}
+
+/* Medium screens (Tablets) */
+@media (max-width: 991.98px) {
+  #portfolio {
+    padding: 4rem 0;
+  }
+  
+  .hero-title {
+    font-size: 3rem;
+  }
+  
+  .section-title h1 {
+    font-size: 2.5rem;
+  }
+  
+  .nav-pills .nav-link {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+  }
+  
+  .btn {
+    padding: 10px 20px;
+    font-size: 0.9rem;
+  }
+  
+  .cta-section {
+    padding: 50px 30px;
+  }
+}
+
+/* Small screens (Mobile landscape) */
+@media (max-width: 767.98px) {
+  /* Typography */
+  .hero-title {
+    font-size: 2.5rem;
+    line-height: 1.2;
+  }
+  
+  #portfolio .section-title h1 {
+    font-size: 2.2rem;
+  }
+  
+  .section-title h2 {
+    font-size: 1.8rem;
+  }
+  
+  /* Navigation */
+  #portfolioTabs .nav-link {
+    padding: 8px 12px;
+    margin: 0 2px 8px 0;
+    font-size: 0.85rem;
+  }
+  
+  /* Project Cards */
+  .project-card {
+    height: 280px !important;
+    margin-bottom: 1.5rem;
+  }
+  
+  #portfolio .project-info h4 {
+    font-size: 1.4rem !important;
+    margin-bottom: 8px !important;
+  }
+  
+  #portfolio .project-info p {
+    font-size: 0.9rem !important;
+  }
+  
+  #portfolio .project-spacer {
+    height: 15px !important;
+  }
+  
+  /* Buttons */
+  .btn {
+    padding: 8px 16px;
+    font-size: 0.85rem;
+  }
+  
+  .btn-outline-light,
+  .btn-outline-primary {
+    padding: 10px 20px !important;
+  }
+  
+  /* CTA Section */
+  .cta-section {
+    padding: 40px 20px;
+    margin-top: 40px;
+  }
+  
+  .cta-title {
+    font-size: 1.8rem;
+  }
+  
+  .cta-description {
+    font-size: 1rem;
+  }
+  
+  /* Flex containers */
+  .d-flex.flex-sm-row {
+    flex-direction: column !important;
+  }
+  
+  .gap-3 {
+    gap: 1rem !important;
+  }
+}
+
+/* Extra small screens (Mobile portrait) */
+@media (max-width: 575.98px) {
+  /* Container padding */
+  .container {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+  
+  /* Typography */
+  .hero-title {
+    font-size: 2rem;
+  }
+  
+  #portfolio .section-title h1 {
+    font-size: 1.8rem;
+  }
+  
+  /* Navigation tabs */
+  #portfolioTabs {
+    text-align: center;
+  }
+  
+  #portfolioTabs .nav-link {
+    padding: 6px 10px;
+    font-size: 0.8rem;
+    margin: 0 1px 6px 0;
+  }
+  
+  /* Project Cards */
+  .project-card {
+    height: 250px !important;
+  }
+  
+  #portfolio .project-info h4 {
+    font-size: 1.2rem !important;
+  }
+  
+  #portfolio .project-info p {
+    font-size: 0.8rem !important;
+  }
+  
+  /* Buttons */
+  .btn {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+  
+  .btn-outline-light,
+  .btn-outline-primary {
+    padding: 12px 24px !important;
+    font-size: 0.9rem !important;
+  }
+  
+  /* CTA Section */
+  .cta-section {
+    padding: 30px 15px;
+  }
+  
+  .cta-title {
+    font-size: 1.5rem;
+  }
+  
+  .cta-description {
+    font-size: 0.9rem;
+  }
+  
+  /* Spacing */
+  .mt-5 {
+    margin-top: 2rem !important;
+  }
+  
+  .pt-5 {
+    padding-top: 2rem !important;
+  }
+}
+
+/* ===== RESPONSIVE POUR TOUTES LES PAGES ===== */
+
+/* Navigation responsive */
+@media (max-width: 991.98px) {
+  .navbar-nav {
+    text-align: center;
+  }
+  
+  .navbar-nav .nav-link {
+    padding: 0.75rem 1rem;
+  }
+}
+
+/* Hero section responsive */
+@media (max-width: 767.98px) {
+  .hero-section {
+    padding: 60px 0;
+  }
+  
+  .hero-content {
+    text-align: center;
+  }
+  
+  .hero-badge {
+    font-size: 0.8rem;
+    padding: 8px 16px;
+  }
+  
+  .hero-description {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+  
+  .floating-card {
+    position: static !important;
+    margin: 20px auto;
+    transform: none !important;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .hero-section {
+    padding: 40px 0;
+  }
+  
+  .hero-title {
+    font-size: 1.8rem;
+  }
+  
+  .hero-description {
+    font-size: 0.9rem;
+  }
+}
+
+/* About section responsive */
+@media (max-width: 767.98px) {
+  .about-content {
+    text-align: center;
+  }
+  
+  .about-image {
+    margin-bottom: 2rem;
+  }
+  
+  .skills-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 1rem;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .skills-grid {
+    grid-template-columns: 1fr !important;
+  }
+  
+  .skill-item {
+    padding: 1rem;
+  }
+}
+
+/* Contact form responsive */
+@media (max-width: 767.98px) {
+  .contact-form {
+    padding: 2rem 1rem;
+  }
+  
+  .form-group {
+    margin-bottom: 1.5rem;
+  }
+  
+  .form-control {
+    padding: 12px 16px;
+    font-size: 1rem;
+  }
+  
+  textarea.form-control {
+    min-height: 120px;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .contact-form {
+    padding: 1.5rem 1rem;
+  }
+  
+  .contact-info {
+    text-align: center;
+    margin-bottom: 2rem;
+  }
+  
+  .contact-item {
+    margin-bottom: 1rem;
+  }
+}
+
+/* Footer responsive */
+@media (max-width: 767.98px) {
+  .footer {
+    text-align: center;
+    padding: 2rem 0;
+  }
+  
+  .footer-content {
+    flex-direction: column;
+    gap: 1rem;
+  }
+  
+  .social-links {
+    justify-content: center;
+  }
+}
+
+/* General responsive utilities */
+@media (max-width: 575.98px) {
+  .text-center-mobile {
+    text-align: center !important;
+  }
+  
+  .mb-mobile-3 {
+    margin-bottom: 1rem !important;
+  }
+  
+  .px-mobile-2 {
+    padding-left: 0.5rem !important;
+    padding-right: 0.5rem !important;
+  }
+}
+
 /* Animation */
 @keyframes fadeInUp {
   from {
