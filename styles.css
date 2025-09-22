@@ -2866,16 +2866,32 @@ body {
 ::-webkit-scrollbar-thumb:hover {
   background: var(--primary-light);
 }
+ 
+
 @media (max-width: 991.98px) {
+  /* Titre Menu en blanc */
   .offcanvas.offcanvas-end .offcanvas-header .offcanvas-title {
     color: #fff !important;
   }
-  .offcanvas.offcanvas-end .social-links a,
-  .offcanvas.offcanvas-end .social-links svg,
-  .offcanvas.offcanvas-end .social-links i {
+  
+  /* Bouton fermer en blanc */
+  .offcanvas.offcanvas-end .btn-close {
+    filter: invert(1) !important;
+  }
+  
+  /* Liens navigation en blanc */
+  .offcanvas.offcanvas-end .navbar-nav .nav-link {
     color: #fff !important;
+  }
+  
+  /* Icônes réseaux sociaux en blanc */
+  .offcanvas.offcanvas-end .social-icon {
     fill: #fff !important;
-    stroke: #fff !important;
-    opacity: 1 !important;
+    color: #fff !important;
+  }
+  
+  /* Fond sombre pour contraste */
+  .offcanvas.offcanvas-end {
+    background: #232635 !important;
   }
 }
