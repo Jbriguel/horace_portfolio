@@ -1631,20 +1631,20 @@ a:hover {
 }
 
 .navbar {
-  padding: 1rem 0;
+  padding: 0.75rem 0;
   transition: all 0.3s ease;
   background-color: var(--white-color);
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
-  z-index: 1030;
+  z-index: 1000;
   width: 100%;
 }
 
 .navbar.scrolled {
-  padding: 0.5rem 0;
+  padding: 0.4rem 0;
   background: var(--white-color) !important;
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
 }
@@ -2377,12 +2377,98 @@ body {
 
 /* Navigation responsive */
 @media (max-width: 991.98px) {
+  .navbar {
+    padding: 0.5rem 0;
+  }
+  
+  .navbar.scrolled {
+    padding: 0.3rem 0;
+  }
+  
+  .navbar-brand img {
+    max-height: 50px;
+  }
+  
   .navbar-nav {
     text-align: center;
   }
   
   .navbar-nav .nav-link {
-    padding: 0.75rem 1rem;
+    padding: 0.5rem 1rem;
+    font-size: 0.95rem;
+  }
+  
+  body {
+    padding-top: 70px;
+  }
+}
+
+@media (max-width: 767.98px) {
+  .navbar {
+    padding: 0.4rem 0;
+  }
+  
+  .navbar.scrolled {
+    padding: 0.25rem 0;
+  }
+  
+  .navbar-brand {
+    font-size: 1.3rem;
+  }
+  
+  .navbar-brand img {
+    max-height: 45px;
+  }
+  
+  .navbar-nav .nav-link {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.9rem;
+  }
+  
+  .navbar-toggler {
+    padding: 0.3rem;
+  }
+  
+  .navbar-toggler-icon {
+    width: 1.3em;
+    height: 1.3em;
+  }
+  
+  body {
+    padding-top: 60px;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .navbar {
+    padding: 0.3rem 0;
+  }
+  
+  .navbar.scrolled {
+    padding: 0.2rem 0;
+  }
+  
+  .navbar-brand {
+    font-size: 1.2rem;
+  }
+  
+  .navbar-brand img {
+    max-height: 40px;
+  }
+  
+  .navbar-nav .nav-link {
+    padding: 0.3rem 0.6rem;
+    font-size: 0.85rem;
+  }
+  
+  .navbar .btn-outline-primary {
+    padding: 0.4rem 1rem;
+    font-size: 0.8rem;
+    margin-left: 0.5rem;
+  }
+  
+  body {
+    padding-top: 55px;
   }
 }
 
