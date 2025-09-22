@@ -2866,3 +2866,12 @@ body {
 ::-webkit-scrollbar-thumb:hover {
   background: var(--primary-light);
 }
+
+@media (max-width: 991.98px) {
+  .offcanvas.offcanvas-end .navbar-nav .nav-link {
+    color: #fff !important;
+  }
+  .offcanvas.offcanvas-end {
+    background: #232635 !important;
+  }
+}
