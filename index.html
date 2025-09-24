@@ -26,7 +26,7 @@
 </head>
 
 <body>
-    <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
+    <!-- <svg xmlns="http://www.w3.org/2000/svg" style="display: none;">
         <symbol id="quote-left" viewBox="0 0 24 24">
             <path fill="currentColor"
                 d="M3.691 6.292C5.094 4.771 7.217 4 10 4h1v2.819l-.804.161c-1.37.274-2.323.813-2.833 1.604A2.9 2.9 0 0 0 6.925 10H10a1 1 0 0 1 1 1v7c0 1.103-.897 2-2 2H3a1 1 0 0 1-1-1v-5l.003-2.919c-.009-.111-.199-2.741 1.688-4.789M20 20h-6a1 1 0 0 1-1-1v-5l.003-2.919c-.009-.111-.199-2.741 1.688-4.789C16.094 4.771 18.217 4 21 4h1v2.819l-.804.161c-1.37.274-2.323.813-2.833 1.604A2.9 2.9 0 0 0 17.925 10H21a1 1 0 0 1 1 1v7c0 1.103-.897 2-2 2" />
@@ -71,7 +71,7 @@
             <path
                 d="M2.146 2.854a.5.5 0 1 1 .708-.708L8 7.293l5.146-5.147a.5.5 0 0 1 .708.708L8.707 8l5.147 5.146a.5.5 0 0 1-.708.708L8 8.707l-5.146 5.147a.5.5 0 0 1-.708-.708L7.293 8 2.146 2.854Z" />
         </symbol>
-    </svg>
+    </svg> -->
 
     <!-- Preloader -->
     <div class="preloader">
@@ -160,53 +160,53 @@
         </div>
     </nav>
 
-    <section id="hero" class="padding-medium position-relative">
+    <section id="hero" class="padding-medium position-relative parallax-element" data-speed="0.3">
         <div class="container text-white">
             <div class="row flex-row-reverse justify-content-center align-items-center">
-                <div class="col-lg-6 text-center" data-aos="fade-up" data-aos-duration="1400">
-                    <div class="position-relative">
-                        <img src="images/banner-img.jpg" alt="img" class="img-fluid rounded-circle w-100 p-5">
+                <div class="col-lg-6 text-center" data-animate="fade-up" data-delay="200">
+                    <div class="position-relative animate-float">
+                        <img src="images/banner-img.jpg" alt="img" class="img-fluid rounded-circle w-100 p-5 micro-interaction">
                         <div class="position-absolute top-0">
                             <img src="images/banner-img-border.png" alt="img"
-                                class="img-fluid rounded-circle animated-border">
+                                class="img-fluid rounded-circle animated-border animate-glow">
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-6 mt-5 ">
-                    <p class="letter-space text-primary fw-semibold fs-3" data-aos="fade-up" data-aos-duration="1000">
+                <div class="col-lg-6 mt-5">
+                    <p class="letter-space text-primary fw-semibold fs-3 scroll-animate" data-animate="fade-right" data-delay="100">
                         Salut, je suis Horace
                     </p>
-                    <h2 class="banner-size fw-medium display-3 my-4" data-aos="fade-up" data-aos-duration="1200">
+                    <h2 class="banner-size fw-medium display-3 my-4 scroll-animate" data-animate="fade-up" data-delay="300">
                         Créateur d'Expériences Digitales Exceptionnelles
                     </h2>
-                    <p class="fs-5 mb-4" data-aos="fade-up" data-aos-duration="1400">
+                    <p class="fs-5 mb-4 scroll-animate" data-animate="fade-up" data-delay="500">
                         Bienvenue dans mon univers créatif. Je suis un designer et développeur passionné, 
                         spécialisé dans la création d'expériences web modernes qui captivent et performent.
                     </p>
                     
-                    <div class="row mb-4" data-aos="fade-up" data-aos-duration="1500">
+                    <div class="row mb-4 scroll-animate" data-animate="fade-up" data-delay="600">
                         <div class="col-4">
-                            <div class="text-center">
-                                <h4 class="text-primary fw-bold mb-1">5+</h4>
+                            <div class="text-center micro-interaction">
+                                <h4 class="text-primary fw-bold mb-1 animate-pulse" data-count="5">5+</h4>
                                 <small class="text-light-text-color">Années</small>
                             </div>
                         </div>
                         <div class="col-4">
-                            <div class="text-center">
-                                <h4 class="text-primary fw-bold mb-1">50+</h4>
+                            <div class="text-center micro-interaction">
+                                <h4 class="text-primary fw-bold mb-1 animate-pulse" data-count="50">50+</h4>
                                 <small class="text-light-text-color">Projets</small>
                             </div>
                         </div>
                         <div class="col-4">
-                            <div class="text-center">
-                                <h4 class="text-primary fw-bold mb-1">30+</h4>
+                            <div class="text-center micro-interaction">
+                                <h4 class="text-primary fw-bold mb-1 animate-pulse" data-count="30">30+</h4>
                                 <small class="text-light-text-color">Clients</small>
                             </div>
                         </div>
                     </div>
                     
-                    <div class="d-flex flex-column flex-sm-row gap-3" data-aos="fade-up" data-aos-duration="1600">
-                        <a href="portfolio.html" class="btn btn-outline-primary position-relative pe-5">
+                    <div class="d-flex flex-column flex-sm-row gap-3 scroll-animate" data-animate="fade-up" data-delay="800">
+                        <a href="portfolio.html" class="btn btn-outline-primary position-relative pe-5 micro-interaction">
                             Mes projets
                             <div class="position-absolute top-50 end-0 translate-middle-y me-3">
                                 <svg class="arrow-right p-1" width="28" height="28">
@@ -214,7 +214,7 @@
                                 </svg>
                             </div>
                         </a>
-                        <a href="contact.html" class="btn btn-outline-light">Discutons de votre projet</a>
+                        <a href="contact.html" class="btn btn-outline-light micro-interaction">Discutons de votre projet</a>
                     </div>
                 </div>
             </div>
@@ -222,11 +222,11 @@
     </section>
 
     <!-- About Preview Section -->
-    <section id="about-preview" class="padding-medium bg-dark bg-opacity-25">
+    <section id="about-preview" class="padding-medium bg-dark bg-opacity-25 parallax-element" data-speed="0.2">
         <div class="container text-white">
             <div class="row align-items-center">
                 <div class="col-lg-6 mb-4 mb-lg-0">
-                    <h2 class="display-5 fw-bold mb-4">Qui suis-je ?</h2>
+                    <h2 class="display-5 fw-bold mb-4 scroll-animate" data-animate="fade-right">Qui suis-je ?</h2>
                     <p class="lead mb-4">
                         Designer graphique et UX/UI passionné avec plus de 5 ans d'expérience dans la création 
                         d'identités visuelles fortes et d'interfaces utilisateur intuitives.
@@ -257,7 +257,7 @@
                 <div class="col-lg-6">
                     <div class="row g-3">
                         <div class="col-6">
-                            <div class="p-3 text-center service-card rounded-3">
+                            <div class="p-3 text-center service-card rounded-3 scroll-animate micro-interaction" data-animate="scale-in" data-delay="100">
                                 <div class="mb-2">
                                     <span class="fs-1">🎨</span>
                                 </div>
@@ -266,7 +266,7 @@
                             </div>
                         </div>
                         <div class="col-6">
-                            <div class="p-3 text-center service-card rounded-3">
+                            <div class="p-3 text-center service-card rounded-3 scroll-animate micro-interaction" data-animate="scale-in" data-delay="200">
                                 <div class="mb-2">
                                     <span class="fs-1">🎯</span>
                                 </div>
@@ -275,7 +275,7 @@
                             </div>
                         </div>
                         <div class="col-6">
-                            <div class="p-3 text-center service-card rounded-3">
+                            <div class="p-3 text-center service-card rounded-3 scroll-animate micro-interaction" data-animate="scale-in" data-delay="300">
                                 <div class="mb-2">
                                     <span class="fs-1">✏️</span>
                                 </div>
@@ -284,7 +284,7 @@
                             </div>
                         </div>
                         <div class="col-6">
-                            <div class="p-3 text-center service-card rounded-3">
+                            <div class="p-3 text-center service-card rounded-3 scroll-animate micro-interaction" data-animate="scale-in" data-delay="400">
                                 <div class="mb-2">
                                     <span class="fs-1">🎨</span>
                                 </div>
@@ -573,6 +573,7 @@
     </button>
     
     <script src="js/main.js"></script>
+    <script src="js/animations.js"></script>
 </body>
 
 </html>

@@ -90,33 +90,37 @@
     <section id="portfolio" class="py-5">
         <div class="container">
             <!-- Header Section -->
-            <div class="portfolio-header text-center mb-5"> 
-                <h1 class="portfolio-title">Projets Créatifs</h1>
-                <p class="portfolio-description">
+            <div class="portfolio-header text-center mb-5 scroll-animate" data-animate="fade-up" data-delay="100"> 
+                <h1 class="portfolio-title animate-glow">Projets Créatifs</h1>
+                <p class="portfolio-description scroll-animate" data-animate="fade-up" data-delay="200">
                     Une sélection de mes réalisations les plus marquantes, alliant créativité et expertise technique.
                 </p>
+                <!-- Bouton de test temporaire -->
+                <button onclick="testModal()" class="btn btn-primary mt-3" style="background: #FFD700; color: #000;">
+                    🧪 Test Modal (Debug)
+                </button>
             </div>
 
             <!-- Portfolio Tabs -->
-            <div class="portfolio-tabs mb-5">
+            <div class="portfolio-tabs mb-5 scroll-animate" data-animate="fade-up" data-delay="300">
                 <ul class="nav nav-pills justify-content-center" id="portfolioTabs" role="tablist">
                     <li class="nav-item" role="presentation">
-                        <button class="nav-link active" id="all-tab" data-bs-toggle="pill" data-bs-target="#all" type="button" role="tab">
+                        <button class="nav-link active micro-interaction" id="all-tab" data-bs-toggle="pill" data-bs-target="#all" type="button" role="tab">
                             Tous les projets
                         </button>
                     </li>
                     <li class="nav-item" role="presentation">
-                        <button class="nav-link" id="web-tab" data-bs-toggle="pill" data-bs-target="#web" type="button" role="tab">
+                        <button class="nav-link micro-interaction" id="web-tab" data-bs-toggle="pill" data-bs-target="#web" type="button" role="tab">
                             Développement Web
                         </button>
                     </li>
                     <li class="nav-item" role="presentation">
-                        <button class="nav-link" id="design-tab" data-bs-toggle="pill" data-bs-target="#design" type="button" role="tab">
+                        <button class="nav-link micro-interaction" id="design-tab" data-bs-toggle="pill" data-bs-target="#design" type="button" role="tab">
                             Design & UI/UX
                         </button>
                     </li>
                     <li class="nav-item" role="presentation">
-                        <button class="nav-link" id="mobile-tab" data-bs-toggle="pill" data-bs-target="#mobile" type="button" role="tab">
+                        <button class="nav-link micro-interaction" id="mobile-tab" data-bs-toggle="pill" data-bs-target="#mobile" type="button" role="tab">
                             Applications Mobiles
                         </button>
                     </li>
@@ -177,6 +181,51 @@
         </div>
     </section>
 
+    <!-- Modal pour affichage des projets -->
+    <div id="projectModal" class="project-modal">
+        <div class="modal-overlay"></div>
+        <div class="modal-content">
+            <button class="modal-close" aria-label="Fermer">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <line x1="18" y1="6" x2="6" y2="18"></line>
+                    <line x1="6" y1="6" x2="18" y2="18"></line>
+                </svg>
+            </button>
+            
+            <div class="modal-body">
+                <div class="modal-image-container">
+                    <img id="modalImage" src="" alt="" class="modal-image">
+                    <div class="modal-navigation">
+                        <button class="nav-btn nav-prev" aria-label="Projet précédent">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="15,18 9,12 15,6"></polyline>
+                            </svg>
+                        </button>
+                        <button class="nav-btn nav-next" aria-label="Projet suivant">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <polyline points="9,18 15,12 9,6"></polyline>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="modal-info">
+                    <div class="modal-header">
+                        <h2 id="modalTitle" class="modal-title"></h2>
+                        <span id="modalCategory" class="modal-category-badge"></span>
+                    </div>
+                    <p id="modalDescription" class="modal-description"></p>
+                    
+                    <div class="modal-meta">
+                        <div class="project-counter">
+                            <span id="currentProject">1</span> / <span id="totalProjects">1</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- script ================================================== -->
     <script src="js/jquery-1.11.0.min.js"></script>
 
@@ -194,6 +243,7 @@
     <script src="js/plugins.js"></script>
     <script src="js/script.js"></script>
     <script src="js/portfolio.js"></script>
+    <script src="js/animations.js"></script>
 </body>
 
 </html>
