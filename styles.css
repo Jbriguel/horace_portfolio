@@ -2013,6 +2013,30 @@ body {
   font-size: 0.95rem;
 }
 
+/* Styles pour les descriptions des projets */
+.project-description {
+  color: rgba(255, 255, 255, 0.85) !important;
+  font-size: 0.9rem !important;
+  line-height: 1.5 !important;
+  margin-bottom: 1rem !important;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all 0.3s ease 0.2s;
+}
+
+.project-card:hover .project-description {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.project-category {
+  color: var(--primary-color) !important;
+  font-size: 0.85rem !important;
+  font-weight: 500 !important;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
 .project-card .badge {
   background: rgba(255, 215, 0, 0.15);
   color: var(--primary-color);
