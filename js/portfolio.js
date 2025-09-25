@@ -521,6 +521,13 @@ function openFinalModal(project) {
 // FONCTION DE TEST FINALE
 window.testModal = function() {
     console.log('🧪 TEST FINAL DU MODAL...');
+    
+    // S'assurer que le modal est initialisé
+    if (!document.getElementById('projectModal')) {
+        console.log('ℹ️ Initialisation du modal...');
+        initializeFinalModal();
+    }
+    
     const firstProject = portfolioData[0];
     if (firstProject) {
         openFinalModal(firstProject);
@@ -529,22 +536,26 @@ window.testModal = function() {
     }
 };
 
-// TEST AUTOMATIQUE AU CHARGEMENT
-setTimeout(() => {
-    console.log('🔥 TEST AUTOMATIQUE DANS 3 SECONDES...');
-    const cards = document.querySelectorAll('.project-card');
-    console.log('🎯 Cartes disponibles pour test:', cards.length);
+// Initialisation du modal au chargement de la page
+document.addEventListener('DOMContentLoaded', function() {
+    console.log('🚀 Initialisation du modal...');
+    initializeFinalModal();
     
-    if (cards.length > 0) {
-        console.log('✅ Cartes trouvées ! Le modal devrait fonctionner.');
-        console.log('👆 Survolez une carte pour voir l\'effet hover');
-        console.log('🖱️ Cliquez sur une carte pour ouvrir le modal');
-    } else {
-        console.error('❌ Aucune carte trouvée !');
-    }
-}, 3000);
+    // Afficher un message de confirmation
+    const cards = document.querySelectorAll('.project-card');
+    console.log(`✅ ${cards.length} cartes de projet détectées`);
+    console.log('🎯 Le modal est prêt à être utilisé');
+    console.log('🖱️ Cliquez sur une carte pour ouvrir le modal');
+    
+    // Tester automatiquement le modal après 3 secondes (pour le débogage)
+    setTimeout(() => {
+        console.log('🧪 Test automatique du modal dans 3 secondes...');
+        // Désactiver le test automatique pour éviter les interférences
+        // window.testModal();
+    }, 3000);
+});
 
 // Export pour utilisation externe si nécessaire
 if (typeof module !== 'undefined' && module.exports) {
-    module.exports = { portfolioData, addProject, displayProjects, ProjectModal };
+    module.exports = { portfolioData, addProject, displayProjects };
 }

@@ -3139,6 +3139,57 @@ body {
   filter: drop-shadow(0 5px 10px rgba(255, 215, 0, 0.3));
 }
 
+/* Styles pour l'image de l'auteur */
+.animate-float img.rounded-circle {
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1/1;
+  object-fit: cover;
+  border-radius: 50% !important;
+  padding: 1.5rem !important;
+}
+
+/* Animation de flottement pour l'image */
+@keyframes floatAnimation {
+  0% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-15px) rotate(1deg); }
+  100% { transform: translateY(0) rotate(0deg); }
+}
+
+.animate-float {
+  animation: floatAnimation 6s ease-in-out infinite;
+  display: inline-block;
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+}
+
+/* Styles pour la bordure animée */
+.animated-border {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  animation: borderPulse 2s ease-in-out infinite;
+  z-index: 1;
+  pointer-events: none;
+}
+
+@keyframes borderPulse {
+  0% { transform: scale(1); opacity: 0.8; }
+  50% { transform: scale(1.03); opacity: 1; }
+  100% { transform: scale(1); opacity: 0.8; }
+}
+
+/* Ajustements pour les écrans mobiles */
+@media (max-width: 991.98px) {
+  .animate-float img.rounded-circle {
+    max-width: 300px;
+    margin: 0 auto 2rem;
+  }
+}
+
 /* Animations pour les images */
 .image-zoom {
   overflow: hidden;
