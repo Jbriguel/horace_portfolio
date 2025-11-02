@@ -9,8 +9,8 @@
   },
   "scripts": {
     "dev": "next dev",
-    "build": "next build && next export",
-    "start": "serve out",
+    "build": "next build",
+    "start": "next start",
     "lint": "next lint",
     "clear": "rm -rf node_modules package-lock.json .next out"
   },
