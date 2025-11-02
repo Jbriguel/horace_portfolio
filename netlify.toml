@@ -1,8 +1,2 @@
 [build]
   command = "npm run build"
-  # publish est géré automatiquement par l'adaptateur OpenNext de Netlify
-
-[[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200
