@@ -1,11 +1,12 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   reactStrictMode: true,
+  output: 'export',
   swcMinify: true,
   images: {
-    // Netlify Image CDN gère l'optimisation automatiquement
-    unoptimized: false,
+    unoptimized: true,
   },
+  trailingSlash: true,
 };
 
 module.exports = nextConfig;
