@@ -38,11 +38,12 @@ const FAQSection = () => {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.5, delay: index * 0.1 }}
               viewport={{ once: true }}
-              className="bg-white rounded-lg border border-gray-200 overflow-hidden shadow-sm"
+              className="bg-white/90 backdrop-blur-sm rounded-2xl border border-gray-200/70 overflow-hidden shadow-sm"
             >
               <motion.button
                 onClick={() => toggleFAQ(index)}
-                className="w-full px-4 sm:px-6 py-3 sm:py-4 text-left flex items-center justify-between hover:bg-gray-50 transition-colors duration-300"
+                aria-expanded={openIndex === index}
+                className="w-full px-4 sm:px-6 py-4 sm:py-5 text-left flex items-center justify-between hover:bg-gray-50/80 transition-colors duration-300"
               >
                 <span className="text-base sm:text-lg font-semibold text-[#04041a] pr-4">{item.question}</span>
                 <motion.svg
@@ -66,8 +67,8 @@ const FAQSection = () => {
                 transition={{ duration: 0.3 }}
                 className="overflow-hidden"
               >
-                <div className="px-6 pb-4">
-                  <p className="text-gray-600 leading-relaxed">{item.answer}</p>
+                <div className="px-4 sm:px-6 pb-5">
+                  <p className="text-gray-600 leading-relaxed text-sm sm:text-base">{item.answer}</p>
                 </div>
               </motion.div>
             </motion.div>

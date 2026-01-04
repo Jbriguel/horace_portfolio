@@ -20,7 +20,7 @@ const HeroSection = () => {
   }
 
   return (
-    <section id="home" className="min-h-screen flex items-center justify-center pt-16 sm:pt-20 px-4 sm:px-6 lg:px-8">
+    <section id="home" className="min-h-[100svh] flex items-center justify-center pt-16 sm:pt-20 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
           {/* Left Content */}
@@ -166,7 +166,7 @@ const HeroSection = () => {
               }}
               className="relative"
             >
-              <div className="w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96 rounded-full bg-[#ffb600] p-1">
+              <div className="w-56 h-56 sm:w-80 sm:h-80 md:w-96 md:h-96 rounded-full bg-[#ffb600] p-1">
                 <div className="w-full h-full rounded-full bg-white flex items-center justify-center overflow-hidden">
                   <img
                     src={profile.profileImage}

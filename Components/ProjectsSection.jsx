@@ -12,6 +12,12 @@ const ProjectsSection = () => {
     ? projects 
     : projects.filter(project => project.category === selectedCategory)
 
+  const openProject = (project) => {
+    const url = project?.links?.demo || project?.links?.youtube || project?.links?.docs
+    if (!url) return
+    window.open(url, '_blank', 'noopener,noreferrer')
+  }
+
   return (
     <section id="projects" className="py-12 sm:py-16 lg:py-20 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
@@ -36,7 +42,7 @@ const ProjectsSection = () => {
           </p>
 
           {/* Category Filter */}
-          <div className="flex flex-wrap justify-center gap-2 sm:gap-4">
+          <div className="flex sm:flex-wrap justify-start sm:justify-center gap-2 sm:gap-4 overflow-x-auto sm:overflow-visible -mx-4 px-4 sm:mx-0 sm:px-0 pb-2 sm:pb-0 no-scrollbar">
             {categories.map((category) => (
               <motion.button
                 key={category}
@@ -50,7 +56,7 @@ const ProjectsSection = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ delay: 0.1 * categories.indexOf(category) }}
                 onClick={() => setSelectedCategory(category)}
-                className={`px-3 sm:px-6 py-2 rounded-full font-medium transition-all duration-300 text-sm sm:text-base ${
+                className={`px-3 sm:px-6 py-2 rounded-full font-medium transition-all duration-300 text-sm sm:text-base whitespace-nowrap ${
                   selectedCategory === category
                     ? 'bg-[#04041a] text-white'
                     : 'bg-gray-200 text-gray-700 hover:bg-gray-300'
@@ -82,7 +88,8 @@ const ProjectsSection = () => {
                 boxShadow: "0 20px 40px rgba(0,0,0,0.1)",
                 transition: { duration: 0.3 }
               }}
-              className="bg-white rounded-xl overflow-hidden border border-gray-200 hover:border-[#ffb600] transition-all duration-300 shadow-sm group"
+              onClick={() => openProject(project)}
+              className="bg-white rounded-xl overflow-hidden border border-gray-200 hover:border-[#ffb600] transition-all duration-300 shadow-sm group cursor-pointer"
             >
               {/* Project Image */}
               <div className="relative h-40 sm:h-48 bg-gray-100 overflow-hidden">
@@ -95,6 +102,8 @@ const ProjectsSection = () => {
                   alt={project.title}
                   className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
                   whileHover={{ scale: 1.1 }}
+                  loading="lazy"
+                  decoding="async"
                   onError={(e) => {
                     e.target.style.display = 'none'
                     e.target.nextSibling.style.display = 'flex'
@@ -129,6 +138,10 @@ const ProjectsSection = () => {
                     className="px-4 py-2 bg-[#ffb600] text-white rounded-lg font-medium"
                     whileHover={{ scale: 1.05 }}
                     whileTap={{ scale: 0.95 }}
+                    onClick={(e) => {
+                      e.stopPropagation()
+                      openProject(project)
+                    }}
                   >
                     Voir le projet
                   </motion.button>

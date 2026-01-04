@@ -9,6 +9,11 @@ const DynamicThreeBackground = () => {
     const canvas = canvasRef.current
     if (!canvas) return
 
+    const prefersReducedMotion = window.matchMedia?.('(prefers-reduced-motion: reduce)')?.matches
+    if (prefersReducedMotion) return
+
+    const isSmallScreen = window.innerWidth < 768
+
     const ctx = canvas.getContext('2d')
     let particles = []
 
@@ -57,7 +62,8 @@ const DynamicThreeBackground = () => {
 
     // Create particles
     const createParticles = () => {
-      const particleCount = Math.floor((canvas.width * canvas.height) / 15000)
+      const divisor = isSmallScreen ? 28000 : 15000
+      const particleCount = Math.floor((canvas.width * canvas.height) / divisor)
       particles = []
       for (let i = 0; i < particleCount; i++) {
         particles.push(new Particle())
@@ -72,22 +78,24 @@ const DynamicThreeBackground = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height)
 
       // Draw connections between nearby particles
-      for (let i = 0; i < particles.length; i++) {
-        for (let j = i + 1; j < particles.length; j++) {
-          const dx = particles[i].x - particles[j].x
-          const dy = particles[i].y - particles[j].y
-          const distance = Math.sqrt(dx * dx + dy * dy)
+      if (!isSmallScreen) {
+        for (let i = 0; i < particles.length; i++) {
+          for (let j = i + 1; j < particles.length; j++) {
+            const dx = particles[i].x - particles[j].x
+            const dy = particles[i].y - particles[j].y
+            const distance = Math.sqrt(dx * dx + dy * dy)
 
-          if (distance < 100) {
-            ctx.save()
-            ctx.globalAlpha = (100 - distance) / 100 * 0.1
-            ctx.strokeStyle = '#04041a'
-            ctx.lineWidth = 1
-            ctx.beginPath()
-            ctx.moveTo(particles[i].x, particles[i].y)
-            ctx.lineTo(particles[j].x, particles[j].y)
-            ctx.stroke()
-            ctx.restore()
+            if (distance < 100) {
+              ctx.save()
+              ctx.globalAlpha = (100 - distance) / 100 * 0.1
+              ctx.strokeStyle = '#04041a'
+              ctx.lineWidth = 1
+              ctx.beginPath()
+              ctx.moveTo(particles[i].x, particles[i].y)
+              ctx.lineTo(particles[j].x, particles[j].y)
+              ctx.stroke()
+              ctx.restore()
+            }
           }
         }
       }

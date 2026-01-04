@@ -5,6 +5,24 @@ import portfolioData from '../data/portfolio-data'
 const TechnologiesSection = () => {
   const { technologies } = portfolioData
 
+  const designSkills = [
+    { name: 'Figma', label: 'Fg', bg: '#0ACF83', fg: '#0b1f2a' },
+    { name: 'Photoshop', label: 'Ps', bg: '#31A8FF', fg: '#0b1f2a' },
+    { name: 'Illustrator', label: 'Ai', bg: '#FF9A00', fg: '#0b1f2a' },
+    { name: 'After Effects', label: 'Ae', bg: '#9999FF', fg: '#0b1f2a' },
+    { name: 'Adobe XD', label: 'Xd', bg: '#FF61F6', fg: '#0b1f2a' },
+    { name: 'Lightroom', label: 'Lr', bg: '#001E36', fg: '#FFFFFF' },
+  ]
+
+  const techSkills = [
+    { name: 'HTML5', label: 'HTML', bg: '#E34F26', fg: '#FFFFFF' },
+    { name: 'CSS3', label: 'CSS', bg: '#1572B6', fg: '#FFFFFF' },
+    { name: 'JavaScript', label: 'JS', bg: '#F7DF1E', fg: '#0b1f2a' },
+    { name: 'React', label: 'React', bg: '#61DAFB', fg: '#0b1f2a' },
+    { name: 'Node.js', label: 'Node', bg: '#339933', fg: '#0b1f2a' },
+    { name: 'Tailwind CSS', label: 'TW', bg: '#38BDF8', fg: '#0b1f2a' },
+  ]
+
   const expertises = [
     {
       title: "Identité Visuelle",
@@ -40,7 +58,7 @@ const TechnologiesSection = () => {
       <div className="max-w-7xl mx-auto">
 
         {/* Expertises Grid */}
-        <div className="grid lg:grid-cols-2 gap-16 items-center mb-16">
+        <div className="grid lg:grid-cols-2 gap-10 sm:gap-16 items-center mb-12 sm:mb-16">
           {/* Left Content */}
           <motion.div
             initial={{ opacity: 0, x: -50 }}
@@ -59,7 +77,7 @@ const TechnologiesSection = () => {
             </p>
             
             {/* Stats */}
-            <div className="flex gap-4 sm:gap-8 mb-6 sm:mb-8">
+            <div className="flex gap-6 sm:gap-8 mb-6 sm:mb-8">
               <div>
                 <div className="text-2xl sm:text-3xl font-bold text-[#ffb600] mb-1">6+</div>
                 <div className="text-gray-400 text-xs sm:text-sm">Années d'Expérience</div>
@@ -101,7 +119,7 @@ const TechnologiesSection = () => {
                 transition={{ duration: 0.5, delay: index * 0.1 }}
                 viewport={{ once: true }}
                 whileHover={{ y: -5 }}
-                className="bg-gray-800/50 backdrop-blur-sm rounded-xl p-6 border border-gray-700/50 hover:border-[#ffb600]/50 transition-all duration-300"
+                className="bg-white/5 backdrop-blur-sm rounded-2xl p-5 sm:p-6 border border-white/10 hover:border-[#ffb600]/40 transition-all duration-300"
               >
                 <div className="flex items-start space-x-4">
                   <div className="w-12 h-12 bg-[#ffb600]/20 rounded-lg flex items-center justify-center flex-shrink-0">
@@ -110,10 +128,10 @@ const TechnologiesSection = () => {
                     </div>
                   </div>
                   <div>
-                    <h3 className="text-[#ffb600] font-bold text-lg mb-2">
+                    <h3 className="text-[#ffb600] font-bold text-base sm:text-lg mb-2">
                       {expertise.title}
                     </h3>
-                    <p className="text-gray-400 text-sm leading-relaxed">
+                    <p className="text-white/70 text-sm leading-relaxed">
                       {expertise.description}
                     </p>
                   </div>
@@ -129,85 +147,43 @@ const TechnologiesSection = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
           viewport={{ once: true }}
-          className="mb-16"
+          className="mb-12 sm:mb-16 relative overflow-hidden rounded-3xl border border-white/10 bg-white/5 backdrop-blur-sm p-6 sm:p-10"
         >
-          <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white text-center mb-3 sm:mb-4">
-            Mes Compétences
-          </h3>
-          <p className="text-sm sm:text-base text-gray-300 text-center mb-8 sm:mb-12 max-w-2xl mx-auto">
-            Technologies et outils que je maîtrise
-          </p>
-          
-          <div className="grid md:grid-cols-2 gap-8 sm:gap-12">
+          <div aria-hidden="true" className="pointer-events-none absolute -top-24 -left-24 h-72 w-72 rounded-full bg-[#ffb600]/20 blur-3xl" />
+          <div aria-hidden="true" className="pointer-events-none absolute -bottom-28 -right-24 h-80 w-80 rounded-full bg-white/10 blur-3xl" />
+
+          <div className="relative">
+            <div className="flex items-center justify-center mb-3 sm:mb-4">
+              <span className="inline-flex items-center gap-2 rounded-full border border-[#ffb600]/30 bg-[#ffb600]/10 px-3 py-1 text-[11px] sm:text-xs text-[#ffb600]">
+                Stack & outils
+              </span>
+            </div>
+            <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white text-center mb-3 sm:mb-4">
+              Mes Compétences
+            </h3>
+            <p className="text-sm sm:text-base text-gray-300 text-center mb-8 sm:mb-10 max-w-2xl mx-auto">
+              Logos des technologies et logiciels que j’utilise au quotidien.
+            </p>
+
+            <div className="grid md:grid-cols-2 gap-8 sm:gap-12">
             {/* Compétences Design */}
             <div>
               <h4 className="text-lg sm:text-xl font-bold text-white mb-6 sm:mb-8">
                 Compétences Design
               </h4>
-              <div className="space-y-4 sm:space-y-6">
-                <div>
-                  <div className="flex justify-between items-center mb-2">
-                    <span className="text-gray-300 font-medium">UI/UX Design</span>
-                    <span className="text-gray-400 font-semibold">92%</span>
-                  </div>
-                  <div className="w-full bg-gray-700 rounded-full h-2">
-                    <motion.div
-                      initial={{ width: 0 }}
-                      whileInView={{ width: "92%" }}
-                      transition={{ duration: 1.5, delay: 0.2 }}
-                      viewport={{ once: true }}
-                      className="h-full bg-[#ffb600] rounded-full"
-                    />
-                  </div>
-                </div>
-
-                <div>
-                  <div className="flex justify-between items-center mb-2">
-                    <span className="text-gray-300 font-medium">Adobe Creative Suite</span>
-                    <span className="text-gray-400 font-semibold">88%</span>
-                  </div>
-                  <div className="w-full bg-gray-700 rounded-full h-2">
-                    <motion.div
-                      initial={{ width: 0 }}
-                      whileInView={{ width: "88%" }}
-                      transition={{ duration: 1.5, delay: 0.4 }}
-                      viewport={{ once: true }}
-                      className="h-full bg-[#ffb600] rounded-full"
-                    />
-                  </div>
-                </div>
-
-                <div>
-                  <div className="flex justify-between items-center mb-2">
-                    <span className="text-gray-300 font-medium">Figma</span>
-                    <span className="text-gray-400 font-semibold">90%</span>
-                  </div>
-                  <div className="w-full bg-gray-700 rounded-full h-2">
-                    <motion.div
-                      initial={{ width: 0 }}
-                      whileInView={{ width: "90%" }}
-                      transition={{ duration: 1.5, delay: 0.6 }}
-                      viewport={{ once: true }}
-                      className="h-full bg-[#ffb600] rounded-full"
-                    />
-                  </div>
-                </div>
-
-                <div>
-                  <div className="flex justify-between items-center mb-2">
-                    <span className="text-gray-300 font-medium">Responsive Design</span>
-                    <span className="text-gray-400 font-semibold">95%</span>
-                  </div>
-                  <div className="w-full bg-gray-700 rounded-full h-2">
-                    <motion.div
-                      initial={{ width: 0 }}
-                      whileInView={{ width: "95%" }}
-                      transition={{ duration: 1.5, delay: 0.8 }}
-                      viewport={{ once: true }}
-                      className="h-full bg-[#ffb600] rounded-full"
-                    />
-                  </div>
-                </div>
+              <div className="grid grid-cols-3 sm:grid-cols-4 gap-4">
+                {designSkills.map((s) => (
+                  <motion.div key={s.name} whileHover={{ y: -6, scale: 1.03 }} className="flex flex-col items-center">
+                    <div
+                      className="w-12 h-12 sm:w-14 sm:h-14 rounded-xl flex items-center justify-center font-bold shadow-sm ring-1 ring-white/10"
+                      style={{ backgroundColor: s.bg, color: s.fg }}
+                      aria-hidden="true"
+                    >
+                      <span className="text-xs sm:text-sm tracking-wide">{s.label}</span>
+                    </div>
+                    <span className="mt-2 text-[11px] sm:text-xs text-white/80 text-center">{s.name}</span>
+                  </motion.div>
+                ))}
               </div>
             </div>
 
@@ -216,74 +192,25 @@ const TechnologiesSection = () => {
               <h4 className="text-lg sm:text-xl font-bold text-white mb-6 sm:mb-8">
                 Compétences Techniques
               </h4>
-              <div className="space-y-4 sm:space-y-6">
-                <div>
-                  <div className="flex justify-between items-center mb-2">
-                    <span className="text-gray-300 font-medium">HTML/CSS</span>
-                    <span className="text-gray-400 font-semibold">95%</span>
-                  </div>
-                  <div className="w-full bg-gray-700 rounded-full h-2">
-                    <motion.div
-                      initial={{ width: 0 }}
-                      whileInView={{ width: "95%" }}
-                      transition={{ duration: 1.5, delay: 0.2 }}
-                      viewport={{ once: true }}
-                      className="h-full bg-[#ffb600] rounded-full"
-                    />
-                  </div>
-                </div>
-
-                <div>
-                  <div className="flex justify-between items-center mb-2">
-                    <span className="text-gray-300 font-medium">JavaScript</span>
-                    <span className="text-gray-400 font-semibold">90%</span>
-                  </div>
-                  <div className="w-full bg-gray-700 rounded-full h-2">
-                    <motion.div
-                      initial={{ width: 0 }}
-                      whileInView={{ width: "90%" }}
-                      transition={{ duration: 1.5, delay: 0.4 }}
-                      viewport={{ once: true }}
-                      className="h-full bg-[#ffb600] rounded-full"
-                    />
-                  </div>
-                </div>
-
-                <div>
-                  <div className="flex justify-between items-center mb-2">
-                    <span className="text-gray-300 font-medium">React/Vue.js</span>
-                    <span className="text-gray-400 font-semibold">85%</span>
-                  </div>
-                  <div className="w-full bg-gray-700 rounded-full h-2">
-                    <motion.div
-                      initial={{ width: 0 }}
-                      whileInView={{ width: "85%" }}
-                      transition={{ duration: 1.5, delay: 0.6 }}
-                      viewport={{ once: true }}
-                      className="h-full bg-[#ffb600] rounded-full"
-                    />
-                  </div>
-                </div>
-
-                <div>
-                  <div className="flex justify-between items-center mb-2">
-                    <span className="text-gray-300 font-medium">Node.js</span>
-                    <span className="text-gray-400 font-semibold">80%</span>
-                  </div>
-                  <div className="w-full bg-gray-700 rounded-full h-2">
-                    <motion.div
-                      initial={{ width: 0 }}
-                      whileInView={{ width: "80%" }}
-                      transition={{ duration: 1.5, delay: 0.8 }}
-                      viewport={{ once: true }}
-                      className="h-full bg-[#ffb600] rounded-full"
-                    />
-                  </div>
-                </div>
+              <div className="grid grid-cols-3 sm:grid-cols-4 gap-4">
+                {techSkills.map((s) => (
+                  <motion.div key={s.name} whileHover={{ y: -6, scale: 1.03 }} className="flex flex-col items-center">
+                    <div
+                      className="w-12 h-12 sm:w-14 sm:h-14 rounded-xl flex items-center justify-center font-bold shadow-sm ring-1 ring-white/10"
+                      style={{ backgroundColor: s.bg, color: s.fg }}
+                      aria-hidden="true"
+                    >
+                      <span className="text-xs sm:text-sm tracking-wide">{s.label}</span>
+                    </div>
+                    <span className="mt-2 text-[11px] sm:text-xs text-white/80 text-center">{s.name}</span>
+                  </motion.div>
+                ))}
               </div>
             </div>
           </div>
+          </div>
         </motion.div>
+
       </div>
     </section>
   )

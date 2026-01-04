@@ -48,7 +48,7 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="bg-slate-900 border-t border-slate-700/50 py-8 sm:py-12 px-4 sm:px-6 lg:px-8">
+    <footer className="bg-[#04041a] border-t border-white/10 py-8 sm:py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         <div className="grid gap-6 sm:gap-8 sm:grid-cols-2 md:grid-cols-3">
           {/* Brand Section */}
@@ -58,11 +58,11 @@ const Footer = () => {
             transition={{ duration: 0.8 }}
             viewport={{ once: true }}
           >
-            <h3 className="text-xl sm:text-2xl font-bold bg-[#FFFFFFFF] bg-clip-text text-transparent mb-3 sm:mb-4">
+            <h3 className="text-xl sm:text-2xl font-bold text-white mb-3 sm:mb-4">
               {profile.name}
             </h3>
-            <p className="text-slate-300 mb-3 sm:mb-4 text-sm sm:text-base">{profile.title}</p>
-            <p className="text-slate-400 text-xs sm:text-sm">
+            <p className="text-white/80 mb-3 sm:mb-4 text-sm sm:text-base">{profile.title}</p>
+            <p className="text-white/60 text-xs sm:text-sm">
               Créateur d'expériences visuelles mémorables et d'identités uniques.
             </p>
           </motion.div>
@@ -84,7 +84,7 @@ const Footer = () => {
                         const element = document.getElementById(item.id);
                         element?.scrollIntoView({ behavior: 'smooth' });
                       }}
-                      className="text-slate-400 hover:text-indigo-400 transition-colors duration-300 text-xs sm:text-sm"
+                      className="text-white/70 hover:text-[#ffb600] transition-colors duration-300 text-xs sm:text-sm"
                     >
                       {item.fr}
                     </button>
@@ -103,12 +103,12 @@ const Footer = () => {
           >
             <h4 className="text-base sm:text-lg font-semibold text-white mb-3 sm:mb-4">Restons en Contact</h4>
             <div className="space-y-2">
-              <p className="text-slate-400 text-xs sm:text-sm">
-                <a href={`mailto:${profile.email}`} className="hover:text-indigo-400 transition-colors duration-300 break-all">
+              <p className="text-white/70 text-xs sm:text-sm">
+                <a href={`mailto:${profile.email}`} className="hover:text-[#ffb600] transition-colors duration-300 break-all">
                   {profile.email}
                 </a>
               </p>
-              <p className="text-slate-400 text-xs sm:text-sm">{profile.location}</p>
+              <p className="text-white/70 text-xs sm:text-sm">{profile.location}</p>
             </div>
             <div className="flex space-x-3 sm:space-x-4 mt-3 sm:mt-4">
               {socialLinks.map((link) => (
@@ -119,7 +119,7 @@ const Footer = () => {
                   href={link.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-slate-400 hover:text-white transition-colors duration-300"
+                  className="text-white/70 hover:text-[#ffb600] transition-colors duration-300"
                   aria-label={`Visiter mon profil ${link.name}`}
                 >
                   {link.icon}
@@ -135,9 +135,9 @@ const Footer = () => {
           whileInView={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.6 }}
           viewport={{ once: true }}
-          className="border-t border-slate-700/50 pt-6 sm:pt-8 flex flex-col md:flex-row justify-between items-center mt-6 sm:mt-8"
+          className="border-t border-white/10 pt-6 sm:pt-8 flex flex-col md:flex-row justify-between items-center mt-6 sm:mt-8"
         >
-          <p className="text-slate-400 text-xs sm:text-sm mb-4 md:mb-0 text-center md:text-left">{footer.copyright}</p>
+          <p className="text-white/60 text-xs sm:text-sm mb-4 md:mb-0 text-center md:text-left">{footer.copyright}</p>
           <div className="flex items-center space-x-4 sm:space-x-6">
             <nav aria-label="Liens du footer">
               <ul className="flex space-x-3 sm:space-x-6">
@@ -145,7 +145,7 @@ const Footer = () => {
                   <li key={index}>
                     <a
                       href={link.url}
-                      className="text-slate-400 hover:text-indigo-400 text-xs sm:text-sm transition-colors duration-300"
+                      className="text-white/60 hover:text-[#ffb600] text-xs sm:text-sm transition-colors duration-300"
                     >
                       {link.label}
                     </a>
@@ -157,7 +157,7 @@ const Footer = () => {
               whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
               onClick={scrollToTop}
-              className="text-slate-400 hover:text-white transition-colors duration-300"
+              className="text-white/60 hover:text-[#ffb600] transition-colors duration-300"
               aria-label="Remonter en haut"
             >
               <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
